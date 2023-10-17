@@ -1,10 +1,21 @@
 import 'package:chat_app/screens/login_screen.dart';
 import 'package:chat_app/screens/register_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
-  // runApp(DevicePreview(builder: (_) => const MyApp()));
+import 'firebase_options.dart';
+
+// void main() {
+//   // runApp(DevicePreview(builder: (_) => const MyApp()));
+//   runApp(const MyApp());
+// }
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
