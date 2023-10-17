@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key});
-
+  const CustomButton({super.key, required this.txt});
+  final String txt;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,8 +13,8 @@ class CustomButton extends StatelessWidget {
       ),
       width: double.infinity,
       height: 40.h,
-      child: const Center(
-        child: Text("LOGIN"),
+      child: Center(
+        child: Text(txt),
       ),
     );
   }

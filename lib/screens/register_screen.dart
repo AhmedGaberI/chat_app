@@ -1,13 +1,13 @@
 import 'package:chat_app/constants.dart';
-import 'package:chat_app/screens/register_screen.dart';
-import 'package:chat_app/widgets/custom_button.dart';
-import 'package:chat_app/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
-  static String id = "LoginScreen";
+import '../widgets/custom_button.dart';
+import '../widgets/custom_text_field.dart';
+
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({super.key});
+  static String id = "RegisterScreen";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +39,7 @@ class LoginScreen extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "LOGIN",
+                  "Register",
                   style: TextStyle(fontSize: 25.sp, color: Colors.white),
                 ),
               ],
@@ -60,22 +60,22 @@ class LoginScreen extends StatelessWidget {
               height: 15,
             ),
             const CustomButton(
-              txt: "LOGIN",
+              txt: "Register",
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  "Don'\t have an account",
+                  "already have an account?",
                   style: TextStyle(
                     color: Colors.white,
                   ),
                 ),
                 TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, RegisterScreen.id);
+                      Navigator.pop(context);
                     },
-                    child: const Text("  Register?")),
+                    child: const Text("  Login?")),
               ],
             ),
           ],

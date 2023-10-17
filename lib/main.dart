@@ -1,4 +1,5 @@
 import 'package:chat_app/screens/login_screen.dart';
+import 'package:chat_app/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -16,9 +17,13 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_, child) {
-        return const MaterialApp(
+        return MaterialApp(
           // builder: DevicePreview.appBuilder,
-          home: LoginScreen(),
+          routes: {
+            LoginScreen.id: (_) => const LoginScreen(),
+            RegisterScreen.id: (context) => const RegisterScreen(),
+          },
+          initialRoute: LoginScreen.id,
         );
       },
     );
